@@ -1,6 +1,7 @@
 # BiteSpeed Chatbot Flow Builder
 
 A professional React-based chatbot flow builder built with React Flow and Tailwind CSS. This application allows users to create, edit, and manage chatbot conversation flows through an intuitive drag-and-drop interface.
+![Chatbot Flow Builder](https://github.com/user-attachments/assets/b73c5cc5-7a1f-45b4-9df1-1b997819124a)
 
 ##  Features
 
