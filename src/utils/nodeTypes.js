@@ -1,14 +1,5 @@
 import { MessageCircle, Image, Mouse, GitBranch, Clock, Database } from 'lucide-react';
 
-/**
- * Configuration for all available node types in the chatbot flow builder
- * This makes it easy to add new node types and maintain consistency
- */
-
-/**
- * Base node configuration interface
- * All node types should follow this structure for consistency
- */
 const createNodeConfig = ({
   type,
   label,
@@ -133,55 +124,28 @@ export const NODE_TYPES = {
   })
 };
 
-/**
- * Get node configuration by type
- * 
- * @param {string} nodeType - The node type identifier
- * @returns {Object|null} Node configuration or null if not found
- */
+
 export const getNodeConfig = (nodeType) => {
   return NODE_TYPES[nodeType] || null;
 };
 
-/**
- * Get all available node types
- * 
- * @returns {Array} Array of all node type configurations
- */
 export const getAllNodeTypes = () => {
   return Object.values(NODE_TYPES);
 };
 
-/**
- * Get node types by category
- * 
- * @param {string} category - The category to filter by
- * @returns {Array} Array of node types in the specified category
- */
+
 export const getNodeTypesByCategory = (category) => {
   return Object.values(NODE_TYPES).filter(nodeType => 
     nodeType.category === category
   );
 };
 
-/**
- * Get all available categories
- * 
- * @returns {Array} Array of unique categories
- */
+
 export const getNodeCategories = () => {
   const categories = Object.values(NODE_TYPES).map(nodeType => nodeType.category);
   return [...new Set(categories)];
 };
 
-/**
- * Create a new node instance with default data
- * 
- * @param {string} nodeType - The type of node to create
- * @param {Object} position - The position where the node should be placed
- * @param {Object} customData - Any custom data to override defaults
- * @returns {Object} New node instance
- */
 export const createNodeInstance = (nodeType, position, customData = {}) => {
   const config = getNodeConfig(nodeType);
   
@@ -200,12 +164,6 @@ export const createNodeInstance = (nodeType, position, customData = {}) => {
   };
 };
 
-/**
- * Validate node data structure
- * 
- * @param {Object} node - The node to validate
- * @returns {Object} Validation result
- */
 export const validateNodeData = (node) => {
   const config = getNodeConfig(node.type);
   

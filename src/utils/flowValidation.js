@@ -7,9 +7,6 @@
  * 3. Source handles can only have one outgoing edge
  * 4. Text nodes should have valid text content
  * 
- * @param {Array} nodes - Array of flow nodes
- * @param {Array} edges - Array of flow edges
- * @returns {Object} Validation result with isValid, message, and details
  */
 export const validateFlow = (nodes, edges) => {
   // If there are no nodes, flow is valid (empty state)
@@ -72,10 +69,6 @@ export const validateFlow = (nodes, edges) => {
 
 /**
  * Finds nodes that don't have any incoming edges (empty target handles)
- * 
- * @param {Array} nodes - Array of flow nodes
- * @param {Array} edges - Array of flow edges
- * @returns {Array} Nodes without target connections
  */
 export const getNodesWithoutTargetHandles = (nodes, edges) => {
   return nodes.filter(node => {
@@ -87,9 +80,7 @@ export const getNodesWithoutTargetHandles = (nodes, edges) => {
 
 /**
  * Validates that all text nodes have valid content
- * 
- * @param {Array} nodes - Array of flow nodes
- * @returns {Object} Validation result
+ *
  */
 export const validateTextNodes = (nodes) => {
   const textNodes = nodes.filter(node => node.type === 'textNode');
@@ -113,8 +104,6 @@ export const validateTextNodes = (nodes) => {
 /**
  * Validates edge connections and constraints
  * 
- * @param {Array} edges - Array of flow edges
- * @returns {Object} Validation result
  */
 export const validateEdges = (edges) => {
   // Check for duplicate source connections (should not happen with current UI, but good to validate)
@@ -143,9 +132,6 @@ export const validateEdges = (edges) => {
 /**
  * Gets flow statistics for debugging and analytics
  * 
- * @param {Array} nodes - Array of flow nodes
- * @param {Array} edges - Array of flow edges
- * @returns {Object} Flow statistics
  */
 export const getFlowStatistics = (nodes, edges) => {
   const nodesByType = nodes.reduce((acc, node) => {

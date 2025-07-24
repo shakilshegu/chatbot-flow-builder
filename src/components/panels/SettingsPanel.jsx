@@ -66,10 +66,6 @@ const SettingsPanel = ({ selectedNode, onUpdateNode, onBack }) => {
           </div>
         );
       
-      // Future node types can be handled here:
-      // case 'imageNode':
-      //   return <ImageNodeSettings node={selectedNode} onUpdate={onUpdateNode} />;
-      
       default:
         return (
           <div className="text-center text-gray-500 py-8">
